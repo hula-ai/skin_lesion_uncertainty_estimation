@@ -5,15 +5,15 @@ parser = OptionParser()
 
 parser.add_option('-e', '--epochs', dest='epochs', default=500, type='int',
                   help='number of epochs (default: 80)')
-parser.add_option('-b', '--batch-size', dest='batch_size', default=1, type='int',
+parser.add_option('-b', '--batch-size', dest='batch_size', default=16, type='int',
                   help='batch size (default: 16)')
 parser.add_option('--df', '--disp_freq', dest='disp_freq', default=2, type='int',
                   help='frequency of displaying the training results (default: 100)')
 
 # DATA
-parser.add_option('--ih', '--img_h', dest='img_h', default=512, type='int',
+parser.add_option('--ih', '--img_h', dest='img_h', default=256, type='int',
                   help='input image height (default: 28)')
-parser.add_option('--iw', '--img_w', dest='img_w', default=512, type='int',
+parser.add_option('--iw', '--img_w', dest='img_w', default=256, type='int',
                   help='input image width (default: 28)')
 parser.add_option('--ic', '--img_c', dest='img_c', default=3, type='int',
                   help='number of input channels (default: 1)')
@@ -54,14 +54,18 @@ parser.add_option('--cwt', '--class_wt_type', dest='class_wt_type', default='bal
 parser.add_option('--lr', '--lr', dest='lr', default=1e-4, type='float',
                   help='learning rate (default: 0.001)')
 
+# INFERENCE
+parser.add_option('--mc', '--MC', dest='MC', default=True,
+                  help='whether to make MC sampling or not (default: False)')
+parser.add_option('--mcs', '--mc_simulations', dest='mc_simulations', default=10, type='int',
+                  help='desired number of number of Monte Carlo iterations to run on inference mode(default: 100)')
 
 # SAVE and LOAD
-parser.add_option('--sd', '--save-dir', dest='save_dir', default='./save',
-                  help='saving directory of .ckpt models (default: ./save)')
+parser.add_option('--sd', '--save_dir', dest='save_dir', default='save',
+                  help='saving directory of .ckpt models (default: save)')
 
-parser.add_option('--lp', '--load_model_path', dest='load_model_path',
-                  default='/home/cougarnet.uh.edu/amobiny/Desktop/skin_lesion_uncertainty_estimation/save/'
-                          '20200123_183951/models/18122.ckpt',
-                  help='path to load a .ckpt model')
+parser.add_option('--mn', '--model_name', dest='model_name',
+                  default='lesion_densenet169',
+                  help='name of the saved directory which includes the model to be loaded')
 
 options, _ = parser.parse_args()

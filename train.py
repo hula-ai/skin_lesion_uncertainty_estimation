@@ -1,19 +1,16 @@
 import os
 import warnings
-
-from utils.callback_utils import config_cls_callbacks
-from utils.eval_utils import compute_class_weights
-from utils.filename_utils import get_log_filename
-from utils.print_utils import log_variable, Tee
-from utils.py_utils import one_hot, load_data
 import sys
-
 warnings.filterwarnings("ignore")
 from datetime import datetime
 from config import options
 from models import backbone
 from keras.preprocessing.image import ImageDataGenerator
-
+from utils.callback_utils import config_cls_callbacks
+from utils.eval_utils import compute_class_weights
+from utils.filename_utils import get_log_filename
+from utils.print_utils import log_variable, Tee
+from utils.py_utils import load_data
 
 if __name__ == '__main__':
     ##################################
