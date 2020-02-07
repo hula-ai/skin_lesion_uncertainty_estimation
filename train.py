@@ -37,8 +37,8 @@ if __name__ == '__main__':
     model = backbone(options.backbone_name, **backbone_options).classification_model(
         input_shape=x_train.shape[1:],
         num_classes=options.num_classes,
-        num_dense_layers=1,
-        num_dense_units=128,
+        num_dense_layers=options.num_dense_layers,
+        num_dense_units=options.num_dense_units,
         pooling=options.pooling,
         dropout_rate=options.dropout_rate,
         kernel_regularizer=options.dense_layer_regularizer,

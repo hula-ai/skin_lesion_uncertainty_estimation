@@ -57,7 +57,7 @@ parser.add_option('--lr', '--lr', dest='lr', default=1e-4, type='float',
 # INFERENCE
 parser.add_option('--mc', '--MC', dest='MC', default=True,
                   help='whether to make MC sampling or not (default: False)')
-parser.add_option('--mcs', '--mc_simulations', dest='mc_simulations', default=10, type='int',
+parser.add_option('--mcs', '--mc_simulations', dest='mc_simulations', default=100, type='int',
                   help='desired number of number of Monte Carlo iterations to run on inference mode(default: 100)')
 
 # SAVE and LOAD

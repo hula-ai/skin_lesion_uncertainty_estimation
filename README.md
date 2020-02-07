@@ -7,9 +7,30 @@ This repository includes the TensorFlow implementation of the methods described 
 *Fig1. Processing pipeline of the proposed risk-aware Bayesian model.*
 
 
-UPDATE: we are currently working on finalizing the codes and generating demo files. 
-Everything (including both PyTorch and TensorFlow implementations) will be uploaded by February 20th.
+## Demo
+A demo of the training and testing with a step-by-step instruction is provided in the
+[Skin_Lesion_Analysis.ipynb](https://github.com/hula-ai/skin_lesion_uncertainty_estimation/blob/master/Skin_Lesion_Analysis.ipynb) file.
 
+## Download data and the pretrained model
+- Link to get the preprocessed [data](https://www.dropbox.com/sh/8ncoth0u1ifqsm7/AAC2hWaGVi_kUg6B65pX-Pyea/preprocessed_data.h5?dl=0)
+- Link to get a [sample pretrained model](https://www.dropbox.com/sh/8ncoth0u1ifqsm7/AABlo_FckiIEfI13Z0RvTgj3a/model_data/lesion_densenet169?dl=0)
+. (create a ```save``` folder at .../skin_lesion_uncertainty_estimation/save and paste the 
+lesion_densenet169 model inside it).
+
+## Train
+- For training with default setup: ```python main.py ```
+
+You can easily train your desired network configuration by passing the desired arguments as provided 
+in the ```config.py``` file. For example:
+
+- For training with batch size of 8: ```python main.py --batch_size=8```
+
+
+## Test
+
+- For testing the pretrained model run: ```python inference.py```
+
+- For testing your trained model run: ```python inference.py --model_name=your_model_name_as_saved```
 
 
 ## Citation
